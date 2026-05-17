@@ -1,4 +1,14 @@
 # Expert System for Hospital and Medical Facilities
+"""
+to run this run these cmds:
+pip install experta
+go to .venv->libs->frozendict->change collections.mapping to collections.abc.mapping
+then make sure to include import collections.abc
+then run this python file as usual
+
+
+or else have python 3.9 instead 
+"""
 
 from experta import *
 
