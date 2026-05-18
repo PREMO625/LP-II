@@ -1,5 +1,3 @@
-from collections import deque
-
 # Graph Class
 class Graph:
 
@@ -25,7 +23,7 @@ class Graph:
     def bfs(self, start):
 
         visited = set()              # Store visited nodes
-        queue = deque([start])       # Initialize queue
+        queue = [start]              # Initialize queue
 
         visited.add(start)
 
@@ -34,7 +32,7 @@ class Graph:
         while queue:
 
             # Remove first element from queue
-            node = queue.popleft()
+            node = queue.pop(0)
 
             print(node, end=" ")
 

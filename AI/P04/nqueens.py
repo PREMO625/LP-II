@@ -6,40 +6,15 @@ N = 4
 # Chessboard initialization
 board = [[0 for _ in range(N)] for _ in range(N)]
 
+# Branch and bound helpers
+col_used = [False] * N
+diag1_used = [False] * (2 * N - 1)
+diag2_used = [False] * (2 * N - 1)
+
 
 # Function to check whether queen can be placed safely
 def is_safe(row, col):
-
-    # Check left side of row
-    for i in range(col):
-        if board[row][i] == 1:
-            return False
-
-    # Check upper-left diagonal
-    i = row
-    j = col
-
-    while i >= 0 and j >= 0:
-
-        if board[i][j] == 1:
-            return False
-
-        i -= 1
-        j -= 1
-
-    # Check lower-left diagonal
-    i = row
-    j = col
-
-    while i < N and j >= 0:
-
-        if board[i][j] == 1:
-            return False
-
-        i += 1
-        j -= 1
-
-    return True
+    return not col_used[row] and not diag1_used[row + col] and not diag2_used[row - col + N - 1]
 
 
 # Backtracking function
@@ -57,6 +32,9 @@ def solve_nqueens(col):
 
             # Place queen
             board[row][col] = 1
+            col_used[row] = True
+            diag1_used[row + col] = True
+            diag2_used[row - col + N - 1] = True
 
             # Recursive call for next column
             if solve_nqueens(col + 1):
@@ -64,6 +42,9 @@ def solve_nqueens(col):
 
             # Backtracking step
             board[row][col] = 0
+            col_used[row] = False
+            diag1_used[row + col] = False
+            diag2_used[row - col + N - 1] = False
 
     return False
 

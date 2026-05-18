@@ -361,7 +361,7 @@ Goal Found
 
 For both BFS and DFS:
 
-genui{"math_block_widget_always_prefetch_v2":{"content":"O(V+E)"}}
+$$O(V+E)$$
 
 Where:
 - V = Number of vertices
@@ -373,13 +373,13 @@ Where:
 
 ## BFS
 
-genui{"math_block_widget_always_prefetch_v2":{"content":"O(V)"}}
+$$O(V)$$
 
 Stores many nodes in queue.
 
 ## DFS
 
-genui{"math_block_widget_always_prefetch_v2":{"content":"O(V)"}}
+$$O(V)$$
 
 Stores nodes in recursion stack.
 
@@ -807,7 +807,7 @@ Adjacency list stores neighboring nodes for every vertex.
 
 ## 10. What is time complexity of BFS and DFS?
 
-genui{"math_block_widget_always_prefetch_v2":{"content":"O(V+E)"}}
+$$O(V+E)$$
 
 ---
 
