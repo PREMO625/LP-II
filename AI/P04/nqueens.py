@@ -1,7 +1,7 @@
 # N-Queens Problem using Backtracking and Branch & Bound
 
 # Number of Queens
-N = 4
+N = 8
 
 # Chessboard initialization
 board = [[0 for _ in range(N)] for _ in range(N)]
